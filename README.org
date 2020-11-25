@@ -1,0 +1,3 @@
+* DOOM emacs configuration
+  My personal files. Now that I understand DOOM better I know that configuration
+  occurs here and not in =.emacs.d=.
