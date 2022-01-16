@@ -43,9 +43,14 @@
 (remove-hook 'term-mode-hook #'evil-collection-term-escape-stay)
 (remove-hook 'term-mode-hook #'evil-collection-term-sync-state-and-mode)
 
+;; Setup popup-windows a bit better
+(plist-put +popup-defaults :modeline t)
+
 (require 'dash)
 (setq evil-insert-state-modes (-remove-item 'term-mode evil-insert-state-modes))
 (add-to-list 'evil-emacs-state-modes 'term-mode)
+(add-to-list 'evil-emacs-state-modes 'grep-mode)
+(add-to-list 'evil-emacs-state-modes 'compilation-mode)
 (put 'narrow-to-region 'disabled nil)
 (put 'narrow-to-page 'disabled nil)
 

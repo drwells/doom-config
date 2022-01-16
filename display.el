@@ -1,6 +1,7 @@
-; display.el: extra display configuration
+;; display.el: extra display configuration
 
 (column-number-mode t)
+
 ;; wrap very long lines so that they are still visible
 (visual-line-mode)
 
@@ -14,11 +15,14 @@
 ;; figured out how to put this in the theme
 (setq evil-emacs-state-cursor '("grey" box))
 
-(global-highlight-parentheses-mode t)
+(global-highlight-parentheses-mode)
 
 ;; I prefer to use org-mode without line numbers - C-c C-p is much more
 ;; efficient
 (add-hook 'org-mode-hook (lambda () (display-line-numbers-mode -1)))
+
+;; always show modelines
+(remove-hook '+popup-buffer-mode-hook #'+popup-set-modeline-on-enable-h)
 
 ;; always wrap long lines
 (+global-word-wrap-mode +1)

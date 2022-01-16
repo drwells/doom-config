@@ -32,5 +32,17 @@
                    (local-set-key (kbd "<S-down>") 'windmove-down)
                    (local-set-key (kbd "<S-up>") 'windmove-up))))
 
+;; restore normal tab behavior
+(after! evil-org
+  (remove-hook 'org-tab-first-hook #'+org-cycle-only-current-subtree-h))
+
+;; configure orderless, a dependency of vertico
+(after! vertico
+  (progn
+    (setq completion-styles '(flex))
+    (setq read-file-name-completion-ignore-case t)
+    (setq read-buffer-completion-ignore-case t)
+    (setq completion-ignore-case t)))
+
 ;; windmove configuration
 (windmove-default-keybindings)
