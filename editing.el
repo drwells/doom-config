@@ -46,3 +46,6 @@
 
 ;; windmove configuration
 (windmove-default-keybindings)
+
+(setq-default c-basic-offset 4)
+(setq-default c-file-style "gnu")

@@ -2,9 +2,6 @@
 
 (column-number-mode t)
 
-;; wrap very long lines so that they are still visible
-(visual-line-mode)
-
 ;; wrap lines in compilation mode
 (add-hook 'compilation-mode-hook (lambda () (+word-wrap-mode)))
 
@@ -15,6 +12,12 @@
 ;; figured out how to put this in the theme
 (setq evil-emacs-state-cursor '("grey" box))
 
+;; prevent pop-up windows when debugging with GDB
+(setq gdb-display-io-nopopup t)
+
+;; always wrap long lines
+(+global-word-wrap-mode +1)
+
 (global-highlight-parentheses-mode)
 
 ;; I prefer to use org-mode without line numbers - C-c C-p is much more
@@ -24,5 +27,5 @@
 ;; always show modelines
 (remove-hook '+popup-buffer-mode-hook #'+popup-set-modeline-on-enable-h)
 
-;; always wrap long lines
-(+global-word-wrap-mode +1)
+;; wrap very long lines so that they are still visible
+(visual-line-mode)

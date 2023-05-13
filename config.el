@@ -44,7 +44,7 @@
 (remove-hook 'term-mode-hook #'evil-collection-term-sync-state-and-mode)
 
 ;; Setup popup-windows a bit better
-(plist-put +popup-defaults :modeline t)
+;; (plist-put +popup-defaults :modeline t)
 
 (require 'dash)
 (setq evil-insert-state-modes (-remove-item 'term-mode evil-insert-state-modes))
