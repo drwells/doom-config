@@ -1,4 +1,4 @@
-;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
+;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
@@ -51,6 +51,8 @@
 (add-to-list 'evil-emacs-state-modes 'term-mode)
 (add-to-list 'evil-emacs-state-modes 'grep-mode)
 (add-to-list 'evil-emacs-state-modes 'compilation-mode)
+(setq evil-motion-state-modes (-remove-item 'compilation-mode evil-motion-state-modes))
+
 (put 'narrow-to-region 'disabled nil)
 (put 'narrow-to-page 'disabled nil)
 

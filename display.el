@@ -4,6 +4,8 @@
 
 ;; wrap lines in compilation mode
 (add-hook 'compilation-mode-hook (lambda () (+word-wrap-mode)))
+;; and programming
+(add-hook 'prog-mode-hook (lambda () (+word-wrap-mode)))
 
 ;; show the evil mode
 (setq evil-mode-line-format 'before)
@@ -14,9 +16,6 @@
 
 ;; prevent pop-up windows when debugging with GDB
 (setq gdb-display-io-nopopup t)
-
-;; always wrap long lines
-(+global-word-wrap-mode +1)
 
 (global-highlight-parentheses-mode)
 
